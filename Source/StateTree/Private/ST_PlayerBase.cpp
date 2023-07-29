@@ -2,12 +2,15 @@
 
 
 #include "ST_PlayerBase.h"
+#include "Camera/CameraComponent.h"
+
 
 // Sets default values
 AST_PlayerBase::AST_PlayerBase()
 {
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
+	FPSCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("FPS Camera"));
 
 }
 
@@ -15,6 +18,7 @@ AST_PlayerBase::AST_PlayerBase()
 void AST_PlayerBase::BeginPlay()
 {
 	Super::BeginPlay();
+
 	
 }
 

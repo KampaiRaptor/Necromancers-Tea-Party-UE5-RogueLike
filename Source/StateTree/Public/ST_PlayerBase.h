@@ -6,6 +6,7 @@
 #include "GameFramework/Character.h"
 #include "ST_PlayerBase.generated.h"
 
+class UCameraComponent;
 UCLASS()
 class STATETREE_API AST_PlayerBase : public ACharacter
 {
@@ -18,6 +19,9 @@ public:
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+	UCameraComponent* FPSCamera;
 
 public:	
 	// Called every frame
