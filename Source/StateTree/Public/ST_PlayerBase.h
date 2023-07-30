@@ -3,15 +3,17 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "ST_DMGInterface.h"
 #include "GameFramework/Character.h"
 #include "ST_PlayerBase.generated.h"
 
 class UCameraComponent;
 UCLASS()
-class STATETREE_API AST_PlayerBase : public ACharacter
+class STATETREE_API AST_PlayerBase : public ACharacter, public IST_DMGInterface
 {
 	GENERATED_BODY()
 
+	bool IsCharacterGuarding_Implementation() override;
 public:
 	// Sets default values for this character's properties
 	AST_PlayerBase();
@@ -29,5 +31,8 @@ public:
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+	bool Guard;
 
 };

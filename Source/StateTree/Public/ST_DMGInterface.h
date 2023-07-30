@@ -24,5 +24,7 @@ class STATETREE_API IST_DMGInterface
 public:
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
 	void DealDMG(APawn* InstigatorPawn, float DamageAmount);
-	
+
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
+	bool IsCharacterGuarding();
 };

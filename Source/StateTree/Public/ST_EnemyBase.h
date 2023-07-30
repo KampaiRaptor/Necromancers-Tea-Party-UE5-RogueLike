@@ -3,13 +3,15 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "ST_DMGInterface.h"
 #include "GameFramework/Character.h"
 #include "ST_EnemyBase.generated.h"
 
 UCLASS()
-class STATETREE_API AST_EnemyBase : public ACharacter
+class STATETREE_API AST_EnemyBase : public ACharacter, public IST_DMGInterface
 {
 	GENERATED_BODY()
+
 
 public:
 	// Sets default values for this character's properties

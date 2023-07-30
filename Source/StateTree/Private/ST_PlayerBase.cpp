@@ -11,6 +11,7 @@ AST_PlayerBase::AST_PlayerBase()
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 	FPSCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("FPS Camera"));
+	Guard = false;
 
 }
 
@@ -36,3 +37,7 @@ void AST_PlayerBase::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 
 }
 
+bool AST_PlayerBase::IsCharacterGuarding_Implementation()
+{
+	return Guard;
+}
