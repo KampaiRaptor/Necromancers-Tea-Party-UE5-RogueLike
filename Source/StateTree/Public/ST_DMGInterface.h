@@ -27,4 +27,7 @@ public:
 
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
 	bool IsCharacterGuarding();
+
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
+	void TriggerDeath();
 };
